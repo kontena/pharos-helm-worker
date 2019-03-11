@@ -12,10 +12,11 @@ steps:
     auto_tag: true
     password:
       from_secret: docker_password
-    repo: "quay.io/kontena/pharos-helm-worker-amd64"
-    tag: "${DRONE_TAG}"
     username:
       from_secret: docker_username
+    repo: "quay.io/kontena/pharos-helm-worker-amd64"
+    registry: quay.io
+    tag: "${DRONE_TAG}"
     build_args:
     - ARCH=amd64
   when:
@@ -38,10 +39,11 @@ steps:
     auto_tag: true
     password:
       from_secret: docker_password
-    repo: "quay.io/kontena/pharos-helm-worker-arm64"
-    tag: "${DRONE_TAG}"
     username:
       from_secret: docker_username
+    repo: "quay.io/kontena/pharos-helm-worker-arm64"
+    registry: quay.io
+    tag: "${DRONE_TAG}"
     build_args:
     - ARCH=arm64
   when:
