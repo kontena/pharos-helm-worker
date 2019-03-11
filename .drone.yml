@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: amd64
+name: worker-amd64
 platform:
   os: linux
   arch: amd64
@@ -28,7 +28,7 @@ steps:
     - tag
 ---
 kind: pipeline
-name: arm64
+name: worker-arm64
 platform:
   os: linux
   arch: arm64
@@ -56,7 +56,7 @@ steps:
     - tag
 ---
 kind: pipeline
-name: amd64
+name: tiller-amd64
 platform:
   os: linux
   arch: amd64
@@ -84,7 +84,7 @@ steps:
     - tag
 ---
 kind: pipeline
-name: arm64
+name: tiller-arm64
 platform:
   os: linux
   arch: arm64
