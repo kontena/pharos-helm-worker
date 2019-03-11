@@ -9,6 +9,7 @@ steps:
   image: plugins/docker
   settings:
     dockerfile: Dockerfile
+    auto_tag: true
     password:
       from_secret: docker_password
     repo: "quay.io/kontena/pharos-helm-worker-amd64"
@@ -34,6 +35,7 @@ steps:
   image: plugins/docker
   settings:
     dockerfile: Dockerfile
+    auto_tag: true
     password:
       from_secret: docker_password
     repo: "quay.io/kontena/pharos-helm-worker-arm64"
