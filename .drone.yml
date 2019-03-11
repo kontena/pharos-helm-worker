@@ -19,6 +19,7 @@ steps:
     tag: "${DRONE_TAG}"
     build_args:
     - ARCH=amd64
+    - HELM_VERSION=2.12.3
   when:
     ref:
     - refs/head/master
@@ -46,6 +47,63 @@ steps:
     tag: "${DRONE_TAG}"
     build_args:
     - ARCH=arm64
+    - HELM_VERSION=2.12.3
+  when:
+    ref:
+    - refs/head/master
+    - refs/tags/*
+    event:
+    - tag
+---
+kind: pipeline
+name: amd64
+platform:
+  os: linux
+  arch: amd64
+steps:
+- name: docker-publish
+  image: plugins/docker
+  settings:
+    dockerfile: Dockerfile
+    auto_tag: true
+    password:
+      from_secret: docker_password
+    username:
+      from_secret: docker_username
+    repo: "quay.io/kontena/pharos-helm-tiller-amd64"
+    registry: quay.io
+    tag: "${DRONE_TAG}"
+    build_args:
+    - ARCH=amd64
+    - HELM_VERSION=2.12.3
+  when:
+    ref:
+    - refs/head/master
+    - refs/tags/*
+    event:
+    - tag
+---
+kind: pipeline
+name: arm64
+platform:
+  os: linux
+  arch: arm64
+steps:
+- name: docker-publish
+  image: plugins/docker
+  settings:
+    dockerfile: Dockerfile
+    auto_tag: true
+    password:
+      from_secret: docker_password
+    username:
+      from_secret: docker_username
+    repo: "quay.io/kontena/pharos-helm-tiller-arm64"
+    registry: quay.io
+    tag: "${DRONE_TAG}"
+    build_args:
+    - ARCH=arm64
+    - HELM_VERSION=2.12.3
   when:
     ref:
     - refs/head/master
