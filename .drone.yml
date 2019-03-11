@@ -64,7 +64,7 @@ steps:
 - name: docker-publish
   image: plugins/docker
   settings:
-    dockerfile: Dockerfile
+    dockerfile: Dockerfile.tiller
     auto_tag: true
     password:
       from_secret: docker_password
@@ -92,7 +92,7 @@ steps:
 - name: docker-publish
   image: plugins/docker
   settings:
-    dockerfile: Dockerfile
+    dockerfile: Dockerfile.tiller
     auto_tag: true
     password:
       from_secret: docker_password
