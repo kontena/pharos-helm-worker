@@ -19,7 +19,7 @@ steps:
     tag: "${DRONE_TAG}"
     build_args:
     - ARCH=amd64
-    - HELM_VERSION=2.12.3
+    - HELM_VERSION=2.13.1
   when:
     ref:
     - refs/head/master
@@ -47,7 +47,7 @@ steps:
     tag: "${DRONE_TAG}"
     build_args:
     - ARCH=arm64
-    - HELM_VERSION=2.12.3
+    - HELM_VERSION=2.13.1
   when:
     ref:
     - refs/head/master
@@ -75,7 +75,7 @@ steps:
     tag: "${DRONE_TAG}"
     build_args:
     - ARCH=amd64
-    - HELM_VERSION=2.12.3
+    - HELM_VERSION=2.13.1
   when:
     ref:
     - refs/head/master
@@ -103,7 +103,7 @@ steps:
     tag: "${DRONE_TAG}"
     build_args:
     - ARCH=arm64
-    - HELM_VERSION=2.12.3
+    - HELM_VERSION=2.13.1
   when:
     ref:
     - refs/head/master
